@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小坨的首页</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <script src="/static/jquery-3.4.0.min.js"></script>
+	<script src="/static/bootstrap.min.js"></script>
+    <style>
+
+        body{
+			background-color: aqua;
+		}
+        h1{
+            margin-bottom: 40px;
+        }
+        .space{
+            height:20px;
+        }
+        .main{
+            padding:10px;
+			width: 1000px;
+                        height:600px;
+			background-color: #fff!important;
+			margin: 0 auto;
+			border: 1px solid #ccc;
+                        overflow:scroll;
+			box-shadow: 0 0 8px #aaa inset;
+
+        }
+    </style>
+</head>
+<body>
+	<h1 align="center">微信好友个性签名展示</h1>
+	<div class="main">
+	<table class="table">
+	<caption>微信好友个性签名展示</caption>
+    <thead>
+      <tr>
+         <th>id</th>
+         <th>昵称</th>
+         <th>个性签名</th>
+      </tr>
+    </thead>
+    <tbody>
+    	{%for i in signature_list%}
+      <tr>
+         <td>{{i["id"]}}</td>
+         <td>{{i["nick_name"]}}</td>
+         <td>{{i["signature"]}}</td>
+      </tr>
+        {%endfor%}
+    </tbody>
+   </table>
+</div>
+	<div class="space"></div>
+</body>
+</html>
